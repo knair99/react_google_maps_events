@@ -10,10 +10,6 @@ export const addGooglePlacesSuccess = (data) => {
     }
 };
 
-//PREDICT HQ TOKEN:
-//yPzs7UMZ9xgOT5EF1OYLpZLE81cZgX
-
-
 export const addGooglePlaces = (lat_and_lon) => {
     return (dispatch) => {
         let url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=' + lat_and_lon  +
@@ -79,21 +75,6 @@ export const addPredictEvents = (locationString) => {
 
 export const addEventBrites = (locationString) => {
     return (dispatch) => {
-        // return new Promise ((resolve, reject) => {
-        //     var eb_client = Eventbrite({'app_key':"COHMV7JH2D7D7OXE46RM"});
-        //     var params = {'city': "San Francisco", 'region': "CA"};
-        //
-        //     eb_client.event_search( params, function(err, data){
-        //         if (err) {
-        //             console.log(err);
-        //             reject('Failed to load eventbrite data');
-        //         } else {
-        //             console.log(data);
-        //             resolve('success');
-        //         }
-        //     });
-        // });
-        //let url = "https://www.eventbriteapi.com/v3/users/me/owned_events/?status=live";
         let url = "https://www.eventbriteapi.com/v3/events/search/?location.address=95112&location.within=1mi&start_date.keyword=today";
         let axinst = axios.create({
             baseURL:url,
