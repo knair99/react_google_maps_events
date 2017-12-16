@@ -1,18 +1,18 @@
 import keys from '../constants/keys';
 import jsonp from 'jsonp';
 
-const npages = '10'
+const npages = '10';
 
 export const addMeetupsSuccess = (data) => {
     return {
         type: 'add',
         data
     }
-}
+};
 export const addMeetups = (zipcode) => {
     return (dispatch) => {
         let url = 'https://api.meetup.com/2/open_events?zip=' + zipcode + '&page=' + npages
-            + '&key=' + keys.meetup_key;
+            + '&key=' + "YOUR_KEY_HERE";
         return new Promise ((resolve, reject) => {
             jsonp(url,  (err, response) => {
                 if (err) {
@@ -21,7 +21,7 @@ export const addMeetups = (zipcode) => {
                 } else {
 
                     let data_array = [];
-                    for (var each in response.results){
+                    for (let each in response.results){
                             let meetup_name = response.results[each].group.name;
                             let event_name = response.results[each].name;
                             let event_link = response.results[each].event_url;
@@ -45,6 +45,6 @@ export const addMeetups = (zipcode) => {
             });
         });
     }
-}
+};
 
 

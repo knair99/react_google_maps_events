@@ -12,7 +12,7 @@ const {
 const { MarkerClusterer } = require("react-google-maps/lib/components/addons/MarkerClusterer");
 const ClusterMap = compose(
     withProps({
-        googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyBfthVBIFQYNgV2FT8qdgF-bKnftLT7cB0&v=3.exp&libraries=geometry,drawing,places",
+        googleMapURL: "https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE&v=3.exp&libraries=geometry,drawing,places",
         loadingElement: <div style={{ height: `100%` }} />,
         containerElement: <div style={{ height: `80vh` }} />,
         mapElement: <div style={{ height: `100%` }} />,

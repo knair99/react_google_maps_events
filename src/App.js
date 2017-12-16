@@ -30,7 +30,7 @@ class App extends Component {
     };
 
     getLatAndLonFromZipcode = (zipcode) => {
-        let url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + zipcode + '&key=AIzaSyBfthVBIFQYNgV2FT8qdgF-bKnftLT7cB0';
+        let url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + zipcode + '&key=YOUR_KEY_HERE';
         axios.get(url).then( (response) => {
                 let lat = parseFloat(response.data.results[0].geometry.location.lat);
                 let latString = response.data.results[0].geometry.location.lat;
@@ -46,7 +46,7 @@ class App extends Component {
                 console.error(error );
         });
 
-    }
+    };
 
     getMeetups = (zipcode) => {
          this.props.meetup_action.addMeetups(zipcode).then( () => {
@@ -70,7 +70,7 @@ class App extends Component {
                 meetup_data: this.state.meetup_data.concat(this.props.google_places_data_update)
             });
         });
-    }
+    };
 
 
 
@@ -80,7 +80,7 @@ class App extends Component {
                 meetup_data: this.state.meetup_data.concat(this.props.google_places_data_update)
             });
         });
-    }
+    };
 
     getEventBrites = (zipcode) => {
         this.props.google_places_action.addEventBrites(zipcode).then(() => {
@@ -88,7 +88,7 @@ class App extends Component {
                 meetup_data: this.state.meetup_data.concat(this.props.google_places_data_update)
             });
         });
-    }
+    };
 
     getEvents = (zipcode) => {
         this.reset();
@@ -104,7 +104,7 @@ class App extends Component {
         this.setState({
            highlight_card: index
         });
-    }
+    };
 
     render() {
     return (

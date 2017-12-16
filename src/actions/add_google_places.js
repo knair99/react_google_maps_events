@@ -17,8 +17,8 @@ export const addGooglePlacesSuccess = (data) => {
 export const addGooglePlaces = (lat_and_lon) => {
     return (dispatch) => {
         let url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=' + lat_and_lon  +
-            '&radius=500&types=night_club&key=AIzaSyC7v0ZZwyiFLq-pm4kgXALCqJmaVbq069I';
-        var axinst = axios.create({
+            '&radius=500&types=night_club&key=YOUR_KEY_HERE';
+        let axinst = axios.create({
             baseURL:url,
             headers: {
                 'Access-Control-Allow-Origin': '*',
@@ -51,7 +51,7 @@ export const addGooglePlaces = (lat_and_lon) => {
 
 export const addPredictEvents = (locationString) => {
     return (dispatch) => {
-        let phq = new Client({access_token :"yPzs7UMZ9xgOT5EF1OYLpZLE81cZgX"})
+        let phq = new Client({access_token :"YOUR_KEY_HERE"});
 
         let query_param = '100mi@-' + locationString;
 
@@ -95,10 +95,10 @@ export const addEventBrites = (locationString) => {
         // });
         //let url = "https://www.eventbriteapi.com/v3/users/me/owned_events/?status=live";
         let url = "https://www.eventbriteapi.com/v3/events/search/?location.address=95112&location.within=1mi&start_date.keyword=today";
-        var axinst = axios.create({
+        let axinst = axios.create({
             baseURL:url,
             headers: {
-                'Authorization': 'Bearer COHMV7JH2D7D7OXE46RM',
+                'Authorization': 'Bearer YOUR_KEY_HERE',
                 'Content-Type': 'application/x-www-form-urlencoded',
                 'Accept': '*/*',
             }

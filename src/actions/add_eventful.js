@@ -5,10 +5,7 @@ export const addeventfulsSuccess = (data) => {
         type: 'add',
         data
     }
-}
-
-//https://www.eventfulapi.com/v3/events/search/?location.address=95112&location.within=1mi&start_date.keyword=today&token=2B4QWMMKABVFS5EM4I2Z
-//http://api.eventful.com/json/events/search?app_key=tBcFmpnCvLmX25Z2&location=San+Diego&date=Future&format=json
+};
 
 export const addeventfuls = (zipcode) => {
     return (dispatch) => {
@@ -17,8 +14,8 @@ export const addeventfuls = (zipcode) => {
                 'Authorization': process.env.REACT_APP_TOKEN,
             },
             verify: "True"
-        }
-        let url = 'https://api.eventful.com/json/events/search?app_key=tBcFmpnCvLmX25Z2&location=' + zipcode  +
+        };
+        let url = 'https://api.eventful.com/json/events/search?app_key=YOUR_KEY_HERE&location=' + zipcode  +
             '&date=Future';
         return new Promise ((resolve, reject) => {
             jsonp(url, context, (err, response) => {
@@ -42,6 +39,6 @@ export const addeventfuls = (zipcode) => {
             });
         });
     }
-}
+};
 
 
